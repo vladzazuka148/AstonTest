@@ -31,8 +31,8 @@ import java.util.Optional;
 import static com.example.astontest.admin.service.impl.AdminServiceImpl.ALL_ACCOUNTS_INFO;
 import static com.example.astontest.admin.service.impl.AdminServiceImpl.ALL_TRANSACTIONS_BY_ACCOUNT_NAME_INFO;
 import static com.example.astontest.admin.service.impl.AdminServiceImpl.NO_SUCH_ACCOUNT;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
