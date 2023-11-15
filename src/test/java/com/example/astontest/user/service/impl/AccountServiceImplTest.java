@@ -9,22 +9,20 @@ import com.example.astontest.user.entity.enums.OperationType;
 import com.example.astontest.user.repository.AccountRepository;
 import com.example.astontest.user.repository.InternalOperationRepository;
 import com.example.astontest.user.repository.MoneyTransferRepository;
-import com.example.astontest.user.service.AccountService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 
-import static com.example.astontest.user.facade.impl.AccountFacadeImpl.BANK_ACCOUNT_EXIST_WITH_NAME;
 import static com.example.astontest.user.service.impl.AccountServiceImpl.CREATE_BANK_ACCOUNT_SUCCESS;
 import static com.example.astontest.user.service.impl.AccountServiceImpl.OPERATION_SUCCESS;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
