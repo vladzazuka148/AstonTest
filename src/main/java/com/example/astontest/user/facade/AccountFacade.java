@@ -1,19 +1,11 @@
 package com.example.astontest.user.facade;
 
 import com.example.astontest.core.dto.responsedto.ResponseResult;
-import com.example.astontest.core.dto.responsedto.enums.ResponseStatus;
 import com.example.astontest.user.dto.CreateAccountRequestDto;
 import com.example.astontest.user.dto.DepositMoneyRequestDto;
 import com.example.astontest.user.dto.TransferMoneyRequestDto;
 import com.example.astontest.user.dto.WithdrawMoneyRequestDto;
-import com.example.astontest.user.entity.Account;
-import com.example.astontest.user.mapper.CreateAccountRequestDtoToAccountEntityMapper;
-import com.example.astontest.user.repository.AccountRepository;
 import com.example.astontest.user.service.AccountService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
 
 /**
  * Фасад для валидации и сквозной логики для работы со счетами в {@link AccountService}
