@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface MoneyTransferEntityToDto {
+public interface MoneyTransferEntityToDtoMapper {
     @Mapping(source = "transactionDataTime", target = "transactionDataTime")
     @Mapping(source = "money", target = "money")
     @Mapping(source = "operationType", target = "operationType")

@@ -12,7 +12,7 @@ import com.example.astontest.user.entity.MoneyTransfer;
 import com.example.astontest.user.entity.enums.OperationType;
 import com.example.astontest.user.mapper.AccountEntityToDtoMapper;
 import com.example.astontest.user.mapper.InternalOperationEntityToDtoMapper;
-import com.example.astontest.user.mapper.MoneyTransferEntityToDto;
+import com.example.astontest.user.mapper.MoneyTransferEntityToDtoMapper;
 import com.example.astontest.user.repository.AccountRepository;
 import com.example.astontest.user.repository.InternalOperationRepository;
 import com.example.astontest.user.repository.MoneyTransferRepository;
@@ -44,7 +44,7 @@ class AdminServiceImplTest {
     @Mock
     private MoneyTransferRepository moneyTransferRepository;
     @Mock
-    private MoneyTransferEntityToDto moneyTransferEntityToDto;
+    private MoneyTransferEntityToDtoMapper moneyTransferEntityToDtoMapper;
     @Mock
     private InternalOperationEntityToDtoMapper internalOperationEntityToDtoMapper;
     @Mock
@@ -120,7 +120,7 @@ class AdminServiceImplTest {
                 .thenReturn(internalOperationDto);
         when(moneyTransferRepository.findDistinctByFromOrTo(account, account))
                 .thenReturn(Collections.singletonList(moneyTransfer));
-        when(moneyTransferEntityToDto.toDto(moneyTransfer))
+        when(moneyTransferEntityToDtoMapper.toDto(moneyTransfer))
                 .thenReturn(moneyTransferDto);
 
         //WHEN

@@ -10,7 +10,7 @@ import com.example.astontest.user.dto.InternalOperationDto;
 import com.example.astontest.user.entity.Account;
 import com.example.astontest.user.mapper.AccountEntityToDtoMapper;
 import com.example.astontest.user.mapper.InternalOperationEntityToDtoMapper;
-import com.example.astontest.user.mapper.MoneyTransferEntityToDto;
+import com.example.astontest.user.mapper.MoneyTransferEntityToDtoMapper;
 import com.example.astontest.user.repository.AccountRepository;
 import com.example.astontest.user.repository.MoneyTransferRepository;
 import com.example.astontest.user.repository.InternalOperationRepository;
@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
     private final AccountRepository accountRepository;
     private final InternalOperationRepository internalOperationRepository;
     private final MoneyTransferRepository moneyTransferRepository;
-    private final MoneyTransferEntityToDto moneyTransferEntityToDto;
+    private final MoneyTransferEntityToDtoMapper moneyTransferEntityToDtoMapper;
     private final InternalOperationEntityToDtoMapper internalOperationEntityToDtoMapper;
     private final AccountEntityToDtoMapper accountEntityToDtoMapper;
 
@@ -80,7 +80,7 @@ public class AdminServiceImpl implements AdminService {
     private List<MoneyTransferDto> getMoneyTransfersByFromOrTo(Account account) {
         return moneyTransferRepository.findDistinctByFromOrTo(account, account)
                 .stream()
-                .map(moneyTransferEntityToDto::toDto)
+                .map(moneyTransferEntityToDtoMapper::toDto)
                 .toList();
     }
 
