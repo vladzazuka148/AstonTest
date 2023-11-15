@@ -67,11 +67,6 @@ class AccountServiceImplTest {
 
         Account account = new Account();
 
-        InternalOperation internalOperation = new InternalOperation();
-        internalOperation.setAccount(account);
-        internalOperation.setOperationType(OperationType.DEPOSIT);
-        internalOperation.setMoney(requestDtoMoney);
-
         //WHEN
         ResponseResult result = accountService.depositMoney(requestDtoMoney,
                 accountEntityMoney,
@@ -96,11 +91,6 @@ class AccountServiceImplTest {
         BigDecimal accountEntityMoney = new BigDecimal(1325);
 
         Account account = new Account();
-
-        InternalOperation internalOperation = new InternalOperation();
-        internalOperation.setAccount(account);
-        internalOperation.setOperationType(OperationType.DEPOSIT);
-        internalOperation.setMoney(requestDtoMoney);
 
         //WHEN
         ResponseResult result = accountService.withdrawMoney(account,
